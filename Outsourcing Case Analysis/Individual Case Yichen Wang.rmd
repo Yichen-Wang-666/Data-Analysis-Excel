@@ -1,0 +1,19 @@
+---
+title: "Individual Case"
+author: "YICHEN"
+date: "08/06/2022"
+output: html_document
+---
+
+```{r Q1}
+# Loading
+library("readxl")
+library(ggplot2)
+# xlsx files
+data <- read_excel("UV7698-XLS-ENG.xlsx")
+data$LEC_ID = as.factor(data$LEC_ID)
+
+graph <- ggplot(data, aes(x=Date, y=Units_Sold, color=LEC_ID)) + geom_line() +ggtitle("Replication of the result") + xlab("Date") + ylab("Units Sold") 
+
+graph
+```
